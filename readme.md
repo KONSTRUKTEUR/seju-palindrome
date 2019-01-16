@@ -1,8 +1,15 @@
-# Palindrome JS npm module
+# Phrase object (with palindrome detector)
 
-This is an npm module for checking palindromes.
+This is a sample npm module for checking palindromes.
 
+The module can be used as follows:
 
-## System
-
-- ECMAscript 6
+```
+$ npm install --global mhartl-palindrome
+$ vim test.js
+let Phrase = require("mhartl-palindrome");
+let napoleonsLament = new Phrase("Able was I, ere I saw Elba.");
+console.log(napoleonsLament.palindrome());
+$ node test.js
+true
+```
