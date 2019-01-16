@@ -12,11 +12,6 @@ String.prototype.blank = function() {
 
 // Adds a last element method to all strings.
 String.prototype.last = function() {
-	// a = this.split(" ");
-	// return a[a.length-1];
-
-	
-	// return this[this.length-1];
 	return this.slice(this.length-1);
 }
 
@@ -24,14 +19,15 @@ String.prototype.last = function() {
 function Phrase(content) {
 	this.content = content;
 
-	// Checks if content is blank.
-	this.verifyContent = function verifyContent() {
-		return this.content.blank();
-	}
-
 	// Returns content processed for palindrome testing.
 	this.processedContent = function processedContent() {
-		return this.content.toLowerCase();
+		return this.letters().toLowerCase();
+		// return this.content
+	}
+
+	// Returns the letters in the content.
+	this.letters = function letters() {
+		return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
 	}
 
 	// Returns true if the phrase is a palindrome, false otherwise.
